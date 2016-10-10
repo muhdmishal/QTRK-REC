@@ -1,0 +1,7 @@
+F:\Dot NET\Qtracker\Qtracker\Qtracker\bin\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\Qtracker\Qtracker\bin\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.Properties.Resources.resources
+F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.csproj.GenerateResource.Cache
+F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.login.resources
