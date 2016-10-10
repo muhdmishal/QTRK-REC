@@ -61,6 +61,7 @@
             this.projectList.Name = "projectList";
             this.projectList.Size = new System.Drawing.Size(224, 21);
             this.projectList.TabIndex = 4;
+            this.projectList.SelectedIndexChanged += new System.EventHandler(this.projectList_SelectedIndexChanged);
             // 
             // Project
             // 

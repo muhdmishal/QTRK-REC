@@ -13,6 +13,8 @@ namespace Qtracker
 
         static int _globalID;
 
+        static int _projectID;
+
         public static string GlobalName
         {
             get
@@ -34,6 +36,18 @@ namespace Qtracker
             set
             {
                 _globalID = value;
+            }
+        }
+
+        public static int ProjectID
+        {
+            get
+            {
+                return _projectID;
+            }
+            set
+            {
+                _projectID = value;
             }
         }
 

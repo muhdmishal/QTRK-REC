@@ -56,12 +56,14 @@ namespace Qtracker
 
                 JObject joResponse = JObject.Parse(responseText);
                 //JObject ojObject = (JObject)joResponse["response"];
-                String array = (String)joResponse["name"];
+                String name = (String)joResponse["name"];
+                int id = (int)joResponse["userID"];
                 //int id = Convert.ToInt32(array[0].ToString());
 
                 if ((Boolean)joResponse["loginStatus"])
                 {
-                    GlobalVar.GlobalName = array;
+                    GlobalVar.GlobalName = name;
+                    GlobalVar.GlobalID = id;
                     Project project = new Project();
                     project.Show();
                     this.Hide();

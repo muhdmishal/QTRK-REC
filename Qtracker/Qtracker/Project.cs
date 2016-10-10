@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace Qtracker
 {
@@ -15,6 +18,113 @@ namespace Qtracker
         {
             InitializeComponent();
             name.Text = GlobalVar.GlobalName;
+
+            try
+            {
+                string _url = GlobalVar.GlobalUrl + "projects.php";
+
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(_url);
+                req.Method = "POST";
+                string Data = "userid=" + GlobalVar.GlobalID ;
+                byte[] postBytes = Encoding.ASCII.GetBytes(Data);
+                req.ContentType = "application/x-www-form-urlencoded";
+                req.ContentLength = postBytes.Length;
+                Stream requestStream = req.GetRequestStream();
+                requestStream.Write(postBytes, 0, postBytes.Length);
+                requestStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+                Stream resStream = response.GetResponseStream();
+
+                var sr = new StreamReader(response.GetResponseStream());
+                string responseText = sr.ReadToEnd();
+
+                JObject joResponse = JObject.Parse(responseText);
+                //JObject ojObject = (JObject)joResponse["response"];
+
+                if ((int)joResponse["num_projects"] <= 0)
+                    MessageBox.Show("You are not assigned to any project. Please contact Project Manager.");
+                else
+                {
+                    List<select> sl = new List<select>();
+                    sl.Add(new select() { Text = "Select Project From below", Value = 0 });
+                    JArray projects = (JArray)joResponse["projects"];
+                    foreach (var element in projects)
+                    {
+                        Console.Write(element);
+
+                        sl.Add(new select() { Text = (string)element["projectTitle"], Value = (int)element["projectID"] });
+                       
+                       
+                    }
+                    projectList.DataSource = sl;
+                    projectList.DisplayMember = "Text";
+                    
+                }
+                
+
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Please Check Your Internet Connection");
+            }
+        }
+
+        private void projectList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            select sl1 = projectList.SelectedItem as select;
+            var _project_ID = Convert.ToInt16(sl1.Value);
+
+            if (_project_ID > 0)
+            {
+                GlobalVar.ProjectID = _project_ID;
+                try
+                {
+                    string _url = GlobalVar.GlobalUrl + "tasks.php";
+
+                    HttpWebRequest req = (HttpWebRequest)WebRequest.Create(_url);
+                    req.Method = "POST";
+                    string Data = "projectid=" + GlobalVar.ProjectID + "&userid=" + GlobalVar.GlobalID;
+                    byte[] postBytes = Encoding.ASCII.GetBytes(Data);
+                    req.ContentType = "application/x-www-form-urlencoded";
+                    req.ContentLength = postBytes.Length;
+                    Stream requestStream = req.GetRequestStream();
+                    requestStream.Write(postBytes, 0, postBytes.Length);
+                    requestStream.Close();
+
+                    HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+                    Stream resStream = response.GetResponseStream();
+
+                    var sr = new StreamReader(response.GetResponseStream());
+                    string responseText = sr.ReadToEnd();
+
+                    JObject joResponse = JObject.Parse(responseText);
+                    //JObject ojObject = (JObject)joResponse["response"];
+
+                    if ((int)joResponse["num_tasks"] <= 0)
+                        MessageBox.Show("You are not assigned any tasks. Please contact Project Manager.");
+                    else
+                    {
+                        List<select> sl = new List<select>();
+                        sl.Add(new select() { Text = "Select Project From below", Value = 0 });
+                        JArray projects = (JArray)joResponse["projects"];
+                        foreach (var project in projects)
+                        {
+                            sl.Add(new select() { Text = (string)project["projectTitle"], Value = (int)project["projectID"] });
+                        }
+                        projectList.DataSource = sl;
+                        projectList.DisplayMember = "Text";
+
+                    }
+
+
+                }
+                catch (WebException)
+                {
+                    MessageBox.Show("Please Check Your Internet Connection");
+                }
+
+            }
         }
     }
 }
