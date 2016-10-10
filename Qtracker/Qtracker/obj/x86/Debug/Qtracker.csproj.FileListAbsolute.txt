@@ -5,3 +5,14 @@ F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.csproj.GenerateReso
 F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.exe
 F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.pdb
 F:\Dot NET\Qtracker\Qtracker\Qtracker\obj\x86\Debug\Qtracker.login.resources
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.login.resources
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.Properties.Resources.resources
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.csproj.GenerateResource.Cache
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Newtonsoft.Json.dll
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Newtonsoft.Json.xml
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.csprojResolveAssemblyReference.cache
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.Project.resources

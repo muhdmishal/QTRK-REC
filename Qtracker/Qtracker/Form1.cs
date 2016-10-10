@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace Qtracker
 {
@@ -30,10 +31,10 @@ namespace Qtracker
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            message.Text = "";
+            
             try
             {
-                string _url = "http://tecque.com/qtracker/login.php";
+                string _url = GlobalVar.GlobalUrl + "login.php";
                 string _username = username.Text;
                 string _password = password.Text;
 
@@ -52,7 +53,23 @@ namespace Qtracker
 
                 var sr = new StreamReader(response.GetResponseStream());
                 string responseText = sr.ReadToEnd();
-                message.Text = responseText;
+
+                JObject joResponse = JObject.Parse(responseText);
+                //JObject ojObject = (JObject)joResponse["response"];
+                String array = (String)joResponse["name"];
+                //int id = Convert.ToInt32(array[0].ToString());
+
+                if ((Boolean)joResponse["loginStatus"])
+                {
+                    GlobalVar.GlobalName = array;
+                    Project project = new Project();
+                    project.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    message.Text = "Username and Passwrod doesn't match";
+                }
             }
             catch (WebException)
             {
