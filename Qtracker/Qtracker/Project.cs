@@ -49,13 +49,9 @@ namespace Qtracker
                     List<select> sl = new List<select>();
                     sl.Add(new select() { Text = "Select Project From below", Value = 0 });
                     JArray projects = (JArray)joResponse["projects"];
-                    foreach (var element in projects)
+                    foreach (var project in projects)
                     {
-                        Console.Write(element);
-
-                        sl.Add(new select() { Text = (string)element["projectTitle"], Value = (int)element["projectID"] });
-                       
-                       
+                        sl.Add(new select() { Text = (string)project["projectTitle"], Value = (int)project["projectID"] });
                     }
                     projectList.DataSource = sl;
                     projectList.DisplayMember = "Text";
@@ -74,6 +70,9 @@ namespace Qtracker
         {
             select sl1 = projectList.SelectedItem as select;
             var _project_ID = Convert.ToInt16(sl1.Value);
+
+            List<select> sl = new List<select>();
+
 
             if (_project_ID > 0)
             {
@@ -102,18 +101,23 @@ namespace Qtracker
                     //JObject ojObject = (JObject)joResponse["response"];
 
                     if ((int)joResponse["num_tasks"] <= 0)
+                    {
+                        sl.Add(new select() { Text = "", Value = 0 });
+                        taskList.DataSource = sl;
+                        taskList.DisplayMember = "Text";
                         MessageBox.Show("You are not assigned any tasks. Please contact Project Manager.");
+                    }
                     else
                     {
-                        List<select> sl = new List<select>();
-                        sl.Add(new select() { Text = "Select Project From below", Value = 0 });
-                        JArray projects = (JArray)joResponse["projects"];
-                        foreach (var project in projects)
+
+                        sl.Add(new select() { Text = "Select Task From below", Value = 0 });
+                        JArray tasks = (JArray)joResponse["tasks"];
+                        foreach (var task in tasks)
                         {
-                            sl.Add(new select() { Text = (string)project["projectTitle"], Value = (int)project["projectID"] });
+                            sl.Add(new select() { Text = (string)task["taskTitle"], Value = (int)task["taskID"] });
                         }
-                        projectList.DataSource = sl;
-                        projectList.DisplayMember = "Text";
+                        taskList.DataSource = sl;
+                        taskList.DisplayMember = "Text";
 
                     }
 
@@ -124,6 +128,12 @@ namespace Qtracker
                     MessageBox.Show("Please Check Your Internet Connection");
                 }
 
+            }
+            else
+            {
+                sl.Add(new select() { Text = "", Value = 0 });
+                taskList.DataSource = sl;
+                taskList.DisplayMember = "Text";
             }
         }
     }

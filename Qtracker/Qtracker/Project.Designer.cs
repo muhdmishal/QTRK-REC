@@ -31,6 +31,7 @@
             this.message = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.projectList = new System.Windows.Forms.ComboBox();
+            this.taskList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // message
@@ -63,11 +64,20 @@
             this.projectList.TabIndex = 4;
             this.projectList.SelectedIndexChanged += new System.EventHandler(this.projectList_SelectedIndexChanged);
             // 
+            // taskList
+            // 
+            this.taskList.FormattingEnabled = true;
+            this.taskList.Location = new System.Drawing.Point(30, 120);
+            this.taskList.Name = "taskList";
+            this.taskList.Size = new System.Drawing.Size(224, 21);
+            this.taskList.TabIndex = 5;
+            // 
             // Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.taskList);
             this.Controls.Add(this.projectList);
             this.Controls.Add(this.name);
             this.Controls.Add(this.message);
@@ -83,5 +93,6 @@
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.ComboBox projectList;
+        private System.Windows.Forms.ComboBox taskList;
     }
 }
