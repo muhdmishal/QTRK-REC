@@ -76,13 +76,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.password);
             this.Controls.Add(this.message);
             this.Controls.Add(this.username);
             this.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "login";
             this.Text = "Qtracker Login";
             this.Load += new System.EventHandler(this.login_Load);

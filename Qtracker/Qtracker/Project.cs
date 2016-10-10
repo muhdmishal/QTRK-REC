@@ -70,13 +70,13 @@ namespace Qtracker
         {
             select sl1 = projectList.SelectedItem as select;
             var _project_ID = Convert.ToInt16(sl1.Value);
-
+            GlobalVar.ProjectID = _project_ID;
+            GlobalVar.ProjectName = Convert.ToString(sl1.Text);
             List<select> sl = new List<select>();
 
 
-            if (_project_ID > 0)
+            if (GlobalVar.ProjectID > 0)
             {
-                GlobalVar.ProjectID = _project_ID;
                 try
                 {
                     string _url = GlobalVar.GlobalUrl + "tasks.php";
@@ -134,6 +134,29 @@ namespace Qtracker
                 sl.Add(new select() { Text = "", Value = 0 });
                 taskList.DataSource = sl;
                 taskList.DisplayMember = "Text";
+            }
+        }
+
+        private void startTrack_Click(object sender, EventArgs e)
+        {
+            select sl1 = taskList.SelectedItem as select;
+            var _task_ID = Convert.ToInt16(sl1.Value);
+            GlobalVar.TaskID = _task_ID;
+            GlobalVar.TaskName = Convert.ToString(sl1.Text);
+
+            if (GlobalVar.ProjectID < 0)
+            {
+                message.Text = "Please select a project.";
+            }
+            else if (GlobalVar.TaskID < 0)
+            {
+                message.Text = "Please select a task.";
+            }
+            else
+            {
+                Tracker tracker = new Tracker();
+                tracker.Show();
+                this.Hide();
             }
         }
     }
