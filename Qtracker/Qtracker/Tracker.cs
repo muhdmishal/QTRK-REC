@@ -7,12 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace Qtracker
 {
     public partial class Tracker : Form
     {
         int _Counter = 0;
+        string _StartTime;
+        string _EndTime;
         [DllImport("User32.dll")]
         private static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);
 
@@ -41,7 +46,7 @@ namespace Qtracker
             projectName.Text = GlobalVar.ProjectName;
             taskName.Text = GlobalVar.TaskName;
             startTime.Text = DateTime.Now.ToString("h:mm:ss tt");
-           
+            this._StartTime = DateTime.Now.ToString();
            
             
         }
@@ -59,7 +64,52 @@ namespace Qtracker
         private void stopTrack_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            var timespend = timeSpend.Text;
+            this._EndTime = DateTime.Now.ToString();
+            var timespend = this._Counter;
+            
+            GlobalVar.TimeSpend = timespend;
+
+            try
+            {
+                string _url = GlobalVar.GlobalUrl + "track.php";
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(_url);
+                req.Method = "POST";
+                string Data = "startTime=" + this._StartTime + "&endTime=" + this._EndTime + "&timeSpend=" + GlobalVar.TimeSpend + "&taskID=" + GlobalVar.TaskID + "&projectID=" + GlobalVar.ProjectID + "&userID=" + GlobalVar.GlobalID;
+
+                byte[] postBytes = Encoding.ASCII.GetBytes(Data);
+                req.ContentType = "application/x-www-form-urlencoded";
+                req.ContentLength = postBytes.Length;
+                Stream requestStream = req.GetRequestStream();
+                requestStream.Write(postBytes, 0, postBytes.Length);
+                requestStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+                Stream resStream = response.GetResponseStream();
+
+                var sr = new StreamReader(response.GetResponseStream());
+                string responseText = sr.ReadToEnd();
+                
+                JObject joResponse = JObject.Parse(responseText);
+                //JObject ojObject = (JObject)joResponse["response"];
+                
+                //int id = Convert.ToInt32(array[0].ToString());
+
+
+                if ((Boolean)joResponse["trackStatus"])
+                {
+                    MessageBox.Show("Updated your time.");
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Error occured during time save. Please try again.");
+                }
+                
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Please Check Your Internet Connection");
+            }
         }
     }
 }

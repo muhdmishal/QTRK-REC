@@ -144,11 +144,11 @@ namespace Qtracker
             GlobalVar.TaskID = _task_ID;
             GlobalVar.TaskName = Convert.ToString(sl1.Text);
 
-            if (GlobalVar.ProjectID < 0)
+            if (GlobalVar.ProjectID <= 0)
             {
                 message.Text = "Please select a project.";
             }
-            else if (GlobalVar.TaskID < 0)
+            else if (GlobalVar.TaskID <= 0)
             {
                 message.Text = "Please select a task.";
             }
@@ -157,7 +157,13 @@ namespace Qtracker
                 Tracker tracker = new Tracker();
                 tracker.Show();
                 this.Hide();
+                tracker.FormClosing += tracker_Closing; 
             }
+        }
+
+        private void tracker_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
     }
 }

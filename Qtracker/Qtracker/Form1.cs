@@ -56,17 +56,20 @@ namespace Qtracker
 
                 JObject joResponse = JObject.Parse(responseText);
                 //JObject ojObject = (JObject)joResponse["response"];
-                String name = (String)joResponse["name"];
-                int id = (int)joResponse["userID"];
+                
                 //int id = Convert.ToInt32(array[0].ToString());
 
                 if ((Boolean)joResponse["loginStatus"])
                 {
+                    String name = (String)joResponse["name"];
+                    int id = (int)joResponse["userID"];
                     GlobalVar.GlobalName = name;
                     GlobalVar.GlobalID = id;
                     Project project = new Project();
                     project.Show();
                     this.Hide();
+                    project.FormClosing += project_Closing; 
+                    
                 }
                 else
                 {
@@ -77,6 +80,11 @@ namespace Qtracker
             {
                 MessageBox.Show("Please Check Your Internet Connection");
             }
+        }
+
+        private void project_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
     }
 }

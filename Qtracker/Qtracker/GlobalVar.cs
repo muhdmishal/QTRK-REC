@@ -21,6 +21,8 @@ namespace Qtracker
 
         static string _taskName;
 
+        static int _timeSpend;
+
         public static string GlobalName
         {
             get
@@ -90,6 +92,18 @@ namespace Qtracker
             set
             {
                 _taskName = value;
+            }
+        }
+
+        public static int TimeSpend
+        {
+            get
+            {
+                return _timeSpend;
+            }
+            set
+            {
+                _timeSpend = value;
             }
         }
 
