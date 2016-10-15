@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qtracker", "Qtracker\Qtracker.csproj", "{AE35CA44-962E-469C-B35D-E72DDBE0F9BF}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QtrackerSetup", "QtrackerSetup\QtrackerSetup.vdproj", "{63297BC7-26AD-4AE0-A7E4-6117D7106E09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,8 @@ Global
 		{AE35CA44-962E-469C-B35D-E72DDBE0F9BF}.Debug|x86.Build.0 = Debug|x86
 		{AE35CA44-962E-469C-B35D-E72DDBE0F9BF}.Release|x86.ActiveCfg = Release|x86
 		{AE35CA44-962E-469C-B35D-E72DDBE0F9BF}.Release|x86.Build.0 = Release|x86
+		{63297BC7-26AD-4AE0-A7E4-6117D7106E09}.Debug|x86.ActiveCfg = Debug
+		{63297BC7-26AD-4AE0-A7E4-6117D7106E09}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
