@@ -157,11 +157,11 @@ namespace Qtracker
                 Tracker tracker = new Tracker();
                 tracker.Show();
                 this.Hide();
-                tracker.FormClosing += tracker_Closing; 
+                tracker.FormClosed += tracker_Closed; 
             }
         }
 
-        private void tracker_Closing(object sender, FormClosingEventArgs e)
+        private void tracker_Closed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }

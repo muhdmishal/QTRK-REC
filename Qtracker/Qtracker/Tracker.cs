@@ -98,7 +98,8 @@ namespace Qtracker
                 if ((Boolean)joResponse["trackStatus"])
                 {
                     MessageBox.Show("Updated your time.");
-                    this.Hide();
+                    GlobalVar.TimeSpend = 0;
+                    this.Close();
                 }
                 else
                 {
@@ -110,6 +111,21 @@ namespace Qtracker
             {
                 MessageBox.Show("Please Check Your Internet Connection");
             }
+        }
+
+        private void Tracker_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (GlobalVar.TimeSpend <= 0) {
+                if (MessageBox.Show("You have unsaved time. Are you sure you want to close?", "QTracker",
+                MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    // Cancel the Closing event from closing the form.
+                    e.Cancel = true;
+
+                }
+
+            }
+            
         }
     }
 }

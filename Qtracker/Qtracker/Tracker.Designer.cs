@@ -162,6 +162,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Tracker";
             this.Text = "Tracker";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tracker_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
