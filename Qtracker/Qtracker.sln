@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qtracker", "Qtracker\Qtrack
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QtrackerSetup", "QtrackerSetup\QtrackerSetup.vdproj", "{63297BC7-26AD-4AE0-A7E4-6117D7106E09}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QtrackerSetupTest", "QtrackerSetupTest\QtrackerSetupTest.vdproj", "{818BB4DA-FF64-41BC-93F8-8B2E1F217384}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -17,6 +19,8 @@ Global
 		{AE35CA44-962E-469C-B35D-E72DDBE0F9BF}.Release|x86.Build.0 = Release|x86
 		{63297BC7-26AD-4AE0-A7E4-6117D7106E09}.Debug|x86.ActiveCfg = Debug
 		{63297BC7-26AD-4AE0-A7E4-6117D7106E09}.Release|x86.ActiveCfg = Release
+		{818BB4DA-FF64-41BC-93F8-8B2E1F217384}.Debug|x86.ActiveCfg = Debug
+		{818BB4DA-FF64-41BC-93F8-8B2E1F217384}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

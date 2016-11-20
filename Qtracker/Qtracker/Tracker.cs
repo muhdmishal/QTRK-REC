@@ -99,6 +99,7 @@ namespace Qtracker
                 {
                     MessageBox.Show("Updated your time.");
                     GlobalVar.TimeSpend = 0;
+                    this._Counter = 0;
                     this.Close();
                 }
                 else
@@ -115,7 +116,8 @@ namespace Qtracker
 
         private void Tracker_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (GlobalVar.TimeSpend <= 0) {
+            if (this._Counter > 0)
+            {
                 if (MessageBox.Show("You have unsaved time. Are you sure you want to close?", "QTracker",
                 MessageBoxButtons.YesNo) == DialogResult.No)
                 {

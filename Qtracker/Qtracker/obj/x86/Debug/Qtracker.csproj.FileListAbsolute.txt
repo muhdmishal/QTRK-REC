@@ -17,3 +17,7 @@ F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Newtonsoft.Json.xml
 F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.csprojResolveAssemblyReference.cache
 F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.Project.resources
 F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.Tracker.resources
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Qtracker.exe.manifest
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\bin\Debug\Qtracker.application
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.exe.manifest
+F:\Dot NET\Qtracker\QTRK-REC\Qtracker\Qtracker\obj\x86\Debug\Qtracker.application

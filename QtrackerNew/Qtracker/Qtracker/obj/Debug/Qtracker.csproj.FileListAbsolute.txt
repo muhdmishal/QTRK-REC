@@ -1,0 +1,17 @@
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Qtracker.exe.config
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Qtracker.exe.manifest
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Qtracker.application
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Newtonsoft.Json.dll
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\bin\Debug\Newtonsoft.Json.xml
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.AddTask.resources
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.login.resources
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.Project.resources
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.Properties.Resources.resources
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.Tracker.resources
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.csproj.GenerateResource.Cache
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.exe.manifest
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.application
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.exe
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.pdb

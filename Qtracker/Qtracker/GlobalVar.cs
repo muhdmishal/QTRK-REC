@@ -7,7 +7,7 @@ namespace Qtracker
 {
     public static class GlobalVar
     {
-        public const string GlobalUrl = "http://localhost/qtracker/";
+        public const string GlobalUrl = "http://tecque.com/qtracker/";
 
         static string _globalName;
 
