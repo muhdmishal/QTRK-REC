@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qtracker.exe" size="3219952">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Qtracker.exe" size="2182640">
       <assemblyIdentity name="Qtracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>o5ZbJLHCaKqWRBKS21aMz9FKANH2DoIf3G3U6TBb/kg=</dsig:DigestValue>
+        <dsig:DigestValue>Q439+kBvGyaQjB3TUTRZhIeaXSc3P+d0aW2iL9AcaiI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

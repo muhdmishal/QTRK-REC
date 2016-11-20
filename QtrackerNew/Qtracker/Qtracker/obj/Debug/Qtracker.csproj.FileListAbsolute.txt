@@ -15,3 +15,4 @@ F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.ex
 F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.application
 F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.exe
 F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.pdb
+F:\Dot NET\Qtracker\QTRK-REC\QtrackerNew\Qtracker\Qtracker\obj\Debug\Qtracker.csprojResolveAssemblyReference.cache

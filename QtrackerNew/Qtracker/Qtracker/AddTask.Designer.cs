@@ -132,7 +132,7 @@
             this.taskTitle.MaximumSize = new System.Drawing.Size(250, 30);
             this.taskTitle.MinimumSize = new System.Drawing.Size(250, 30);
             this.taskTitle.Name = "taskTitle";
-            this.taskTitle.Size = new System.Drawing.Size(250, 30);
+            this.taskTitle.Size = new System.Drawing.Size(250, 22);
             this.taskTitle.TabIndex = 30;
             this.taskTitle.Text = "Title";
             // 
